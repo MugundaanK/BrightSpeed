@@ -197,10 +197,10 @@
 
 // console.log(productionlist);
 
-// productionlist.map((ele)=>{
-//     ele.price = ele.price - (ele.price * 10/100)
+// let discount = productionlist.map((ele)=>{
+//     return ele.price - (ele.price * 10/100)
 // })
-// console.log(productionlist)
+// console.log(discount)
 
 // let totalprice = productionlist.reduce((acc,ele)=>{
 //     return acc+ele.price
@@ -212,16 +212,25 @@
 
 // Capitalizing The String:
 
-let string = "hi every one i'm mugundaan from salem"
-console.log(string)
-// let str = string.charAt(0).toUpperCase()+string.slice(1)
-// console.log(str);
-let str1 = string.split(" ")
-// console.log(str1)
+// let string = "hi every one i'm mugundaan from salem"
+// console.log(string)
+// // let str = string.charAt(0).toUpperCase()+string.slice(1)
+// // console.log(str);
+// let str1 = string.split(" ")
+// // console.log(str1)
 
-for(let i=0 ; i < str1.length ; i++){
-    str1[i] = str1[i].charAt(0).toUpperCase() + str1[i].slice(1)
-}
+// for(let i=0 ; i < str1.length ; i++){
+//     str1[i] = str1[i].charAt(0).toUpperCase() + str1[i].slice(1)
+// }
 
-let str2 = str1.join(" ")
-console.log(str2)
+// let str2 = str1.join(" ")
+// console.log(str2)
+
+// f()
+// function f() {
+//     var a = 10;
+//     if(true){
+//        let  a = 20;
+//        console.log(a);
+//     }
+// }

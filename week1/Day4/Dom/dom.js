@@ -118,26 +118,22 @@
 
 // remfromarr()
 
-let display = document.getElementById("display");
-let name = ['bob','alice','john','mathew'];
-let p;
+class person{
+    constructor(name,age){
+        this.name=name;
+        this.age = age;
+        console.log(this.name+"  Constructor");
+    }
 
-function s(){
-    for(let i=0;i<name.length;i++){
-         p = document.createElement('li');
-        p.innerHTML = name[i];
-        display.appendChild(p);
-         c(i);
+    display(){
+        console.log(this.name+" function");
+    }
+    ages(){
+        console.log(this.age);
     }
 }
 
-function c(val){
-    p.onclick = function f(){
-            name.splice(val,1);
-            display.innerText="";
-            
-        s();
-   }
- 
-}
-s();
+let ob = new person("Mugunth",22);
+
+ob.display();
+ob.ages();

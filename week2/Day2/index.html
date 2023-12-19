@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS</title>
+</head>
+<body ng-app = 'demo'>
+ <!-- 2    -->
+    <!-- <h2>{{2+2}}</h2>
+    <h2>{{5-2}}</h2>
+    <h2>{{5*5}}</h2>
+    <h2>{{25/5}}</h2>
+    <h1>{{name}}</h1>
+    <h2>{{age}}</h2>
+    <h3> {{city}} </h3>-->
+
+    <!--<div ng-controller = 'control'>
+        <h3> {{name}} </h3>
+        <h3> {{city}} </h3>
+    </div> -->
+    
+<!-- 3   -->
+    <!-- <div id="disp" ng-controller = 'UserController'>
+        <h3> Addition : {{add}} </h3>
+        <h3> Subraction : {{sub()}} </h3>
+        <h3> Multiplication : {{mul()}} </h3>
+        <h3> Division : {{div()}} </h3>
+    </div> -->
+
+<!-- 1 -->
+    <!-- <div ng-controller = 'control'>
+        First Name : <input type="text" id="fnmae" ng-model="firstname" placeholder="Enter First Name"><br>
+        Last Name : <input type="text" id="lnmae" ng-model="lastname" placeholder="Enter Last Name"><br>
+        <br>
+        First Name : {{firstname}}
+        Last Name : {{lastname}}
+        Array Elements: <br>
+        <p ng-repeat="item in arr"> {{item}} </p>
+    </div> -->
+
+<!-- 4 -->
+    <!-- <div ng-controller = 'buttonclick'>
+        <div>
+            <button ng-click="textdisplay()">Button</button>
+            <br>
+            <p> {{ text }} </p>
+        </div>
+    </div> -->
+
+    <div ng-controller = 'control'>
+        Full Name : <input type="text" ng-model="fullname" placeholder="Enter Your Full Name">
+        Last Name : <input type="text" ng-model="lastname" placeholder="Enter Your Last Name">
+        <button ng-click="displayname()">Click To Display</button><br>
+        <p>Full Name : {{fname}} </p>
+        <p>Last Name : {{lname}} </p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+    <script>
+        var app = angular.module('demo',[]);
+        app.controller('control',['$scope',function(s){
+            s.displayname = function(){
+                s.fname = s.fullname;
+                s.lname = s.lastname
+                console.log(s.fullname);
+            }
+        }])
+    </script>
+    <!-- <script>
+        var app = angular.module('demo',[]);
+        app.controller('buttonclick', function($scope){
+            $scope.text = '';
+
+            $scope.textdisplay = function(){
+                $scope.text = 'Hi Welcome....!';
+            };
+        });
+    </script> -->
+    
+    <!-- <script>
+        var app = angular.module('demo', []);
+        app.controller('control',['$scope', function(s) {
+            s.arr = [1,2,3,4,5,6]
+
+        }]);
+    </script> -->
+</body>
+</html>

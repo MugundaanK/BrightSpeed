@@ -118,22 +118,73 @@
 
 // remfromarr()
 
-class person{
-    constructor(name,age){
-        this.name=name;
-        this.age = age;
-        console.log(this.name+"  Constructor");
-    }
+// class person{
+//     constructor(name,age){
+//         this.name=name;
+//         this.age = age;
+//         console.log(this.name+"  Constructor");
+//     }
 
-    display(){
-        console.log(this.name+" function");
-    }
-    ages(){
-        console.log(this.age);
-    }
-}
+//     display(){
+//         console.log(this.name+" function");
+//     }
+//     ages(){
+//         console.log(this.age);
+//     }
+// }
 
-let ob = new person("Mugunth",22);
+// let ob = new person("Mugunth",22);
 
-ob.display();
-ob.ages();
+// ob.display();
+// ob.ages();
+
+
+// let arr = ["Mugunth","Gowsick","Karthik","Gokul"]
+
+// let disp = document.getElementById("disp")
+// let li
+// disp.innerHTML =`<h3> Display Names</h3>`
+// function remfromarr(){
+    
+//     for (let i = 0; i < arr.length; i++) {
+//         li = document.createElement("li")
+//         li.innerHTML = arr[i]
+//         // li.setAttribute("id",i+1)
+//         // // console.log(li.id)
+//         disp.appendChild(li)
+//         var iden = i
+//         console.log(iden)
+//         click(iden)
+//     }
+    
+// }
+
+        
+// function click(iden){
+
+//     li.onclick = function (){
+//         // let li = document.createElement("li")
+//         // let index = arr.indexOf(iden)
+//         arr.splice(iden,1)
+//         // console.log(arr);
+//         disp.innerHTML=""
+
+
+//         remfromarr()
+//     }
+
+// }
+
+//     // for(let i=0 ; i<arr.length ; i++){
+//     // let li = document.createElement("li")
+//     // li.innerHTML = arr[i]
+//     // // li.setAttribute("id",i+1)
+//     // // console.log(li.id)
+//     // disp.appendChild(li)
+//     // }            
+//     // }
+
+// remfromarr()
+
+
+

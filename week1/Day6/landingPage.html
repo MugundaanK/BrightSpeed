@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Welcome To The Landing Page</h2>
+        <button id="register">Register</button>
+    </header>
+    <div id="maindiv">
+        <form class="form">
+            <input type="text" name="uname" id="username" placeholder="Enter Your Name">
+            <input type="password" name="pass" id="password" placeholder="Enter Your Password">
+            
+            <button type="submit" onclick="logincheck()">Submit</button>
+        </form>
+        <div id="bodydiv">
+
+        </div>
+    </div>
+
+    <script>
+        // const formele = document.querySelector(".form")
+        //     formele.addEventListener('submit', () => {
+        //     event.preventDefault()
+    
+        //     let formData = new FormData(formele)
+        //     let data = Object.fromEntries(formData)
+        //     console.log(data)
+        //     function submit(){
+        //         fetch('http://localhost:3000/user')
+        //         .then(resp => resp.json())
+        //         .then(data => {
+        //             let state = true
+        //             for (const i of data) {
+        //                 if(document.getElementById("username").value == i.uname && document.getElementById("password").value == i.pass){
+        //                     window.location.href = "http://127.0.0.1:5500/Day6/loginpage.html"
+        //                     state = false
+        //                     break;
+        //                 }
+        //             }
+        //             if(state){
+        //                 // console.log("Unsuccessful Login");
+        //                 docuemnt.getElementById("bodydiv") = ""
+        //                 document.getElementById("bodydiv").innerHTML = "Either username or password incorrect"
+        //             }
+        //         })
+        //         .catch(error => console.log("error"))
+                
+        //     }
+        let uname = document.getElementById("username").value
+        let pass = document.getElementById("password").value
+        console.log(uname,pass);
+        let state = true
+        function logincheck() {
+            event.preventDefault()
+            fetch('http://localhost:3000/user')
+            .then(resp => resp.json())
+            .then(data =>{
+                for (let i of data) {
+                    if(uname == i.uname && pass == i.pass){
+                        docuemnt.getElementById("bodydiv") = "";
+                        document.getElementById("bodydiv").innerHTML = ("Successful Login");
+                        state = false;
+                        console.log("Success");
+                    }
+                }
+                    if(state){
+                        docuemnt.getElementById("bodydiv") = "";
+                        document.getElementById("bodydiv").innerHTML = ("Unsuccessful Login");
+                        console.log("unsuccess");
+                    }
+                })
+            .catch(error =>console.log(error));
+        }
+
+    </script>
+
+</body>
+</html>
+let check=true;
+function login(){
+    let email = document.getElementById('email').value;
+    let pass = document.getElementById('pass').value;
+
+    console.log(email,pass);
+     check =true;
+    fetch("http://localhost:3000/users")
+    .then(res => res.json())
+    .then(data => {
+        // console.log(data);
+        for (const i of data) {
+            if((i.email == email) && i.pass == pass){
+                console.log("Login Success");
+                check=false
+                window.location.href = "http://127.0.0.1:5500/brightspeed/week-01/Day-05/signin/dashboard.html";
+                break;
+            }
+         
+        }
+        if(check){
+            console.log("Login Failed");
+        }
+    })
+    .catch(e => console.log(e))
+
+
+}

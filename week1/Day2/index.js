@@ -41,13 +41,13 @@
 //     }
 // }
 // class Dog extends Animals{
-//     constructor(name){
+//     constructor(){
 //         super(); // must be used in child class
-//         this.name=name;
+// //         this.name=name;
 //     }
     
 // }
-// let d1 = new Dog("Doggy");
+// let d1 = new Dog();
 // console.log(d1.speak());
 
 // // polymorphism: Method overridding
@@ -74,6 +74,8 @@
 
 
 // Loops 
+
+
 // for(let i=0 ; i<5 ; i++){
 //     console.log(i+1);
 // }
@@ -84,7 +86,7 @@
 //  }
 
 //  for(let val of arr){
-//     console.log(arr[val]);
+//     console.log(`for of loop: `+val);
 //  }
 
 //  arr.forEach((item) =>{
@@ -93,10 +95,10 @@
 
 //  let i=0;
 
-// while(i<10){
-//     console.log(i)
-//     i++
-// }
+// // while(i<10){
+// //     console.log(i)
+// //     i++
+// // }
 
 // do{
 //     console.log(i)
@@ -113,3 +115,40 @@
 // }
 // f()
 // console.log(b)
+
+
+// class A  
+//   {  
+//      display()  
+//     {  
+//       console.log("A is invoked");  
+//     }  
+//   }  
+// class B extends A  
+//   {  
+//     display()  
+//     {  
+//       console.log("B is invoked");  
+//     }  
+//   }  
+// class C extends A{
+//    display(){
+//       console.log("C is invoked");
+//    }
+// }
+  
+// var a=[new C(), new A(), new B()]  
+// a.forEach(function(msg)  
+// {  
+// msg.display();  
+// });  
+
+let marks = 100
+if(marks<0||marks>100)  
+{  
+  alert("Invalid Marks");  
+}  
+else  
+{  
+  console.log(marks);;  
+}  

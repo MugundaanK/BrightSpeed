@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Welcom To The Dashboard</h2>
+    <button id="logout" onclick="logout()">Logout</button>
+    <div id="disp">
+
+    </div>
+    <script>
+        let name = localStorage.getItem("name");
+        let password = localStorage.getItem("password");
+        if(name != null){
+            let h = document.createElement("h2");
+            h.innerHTML= "Welcome "+name;
+            disp.appendChild(h);
+        }
+        else{
+            window.location.href = "./loginPage.html";
+        }
+        
+    </script>
+</body>
+</html>

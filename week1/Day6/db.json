@@ -1,0 +1,29 @@
+{
+  "user": [
+    {
+      "uname": "Mugundaan",
+      "pass": "Kumar",
+      "id": 1
+    },
+    {
+      "uname": "Gowsick",
+      "pass": "R",
+      "id": 2
+    },
+    {
+      "uname": "Karthik",
+      "pass": "B",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

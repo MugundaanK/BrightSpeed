@@ -1,0 +1,35 @@
+{
+  "user": [
+    {
+      "firstname": "Mugundaan",
+      "Lastname": "K",
+      "email": "mugunth@gmail.com",
+      "password": "Mugunth19",
+      "id": 1
+    },
+    {
+      "firstname": "Gowsick",
+      "Lastname": "R",
+      "email": "gowsick@gmail.com",
+      "password": "Gowsick",
+      "id": 2
+    },
+    {
+      "firstname": "Karthik",
+      "Lastname": "B",
+      "email": "karthik@gmail.com",
+      "password": "Karthik",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

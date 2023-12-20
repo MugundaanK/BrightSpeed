@@ -1,34 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AngularJS</title>
-</head>
-<body>
-    <div >
+    <style>
+      .divclass {
+        background-color: pink;
+        padding: 20px;
+      }
+      .hclass {
+        color: white;
+        font-size: x-large;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body ng-app="demo">
+    <div ng-controller="directive">
+      <!-- 1 -->
+      <!-- <div ng-class="{divclass:iscolor}">
+            <h2 ng-click="clrchg()" ng-class="{hclass:iscolor}"> HI Hello </h2>
+        </div> -->
 
+      <!-- 2 -->
+
+      <!-- <button ng-show="islogin">Login</button>
+            <button ng-show="issignup">Signup</button>
+            <br><br>
+            <button ng-click="toggle()">Toggle</button> -->
+
+      <!-- 3 -->
+
+      <!-- <table border="3px" cellpadding="5px" cellspacing="3px">
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+            </tr>
+                <tr ng-repeat="i in name | orderBy : 'country'">
+                    <td> {{i.name}} </td>
+                    <td> {{i.country}} </td>
+                </tr>
+        </table> -->
+
+      <!-- 4 -->
+
+      <!-- User Name : <input type="text" ng-model="usernamevalue" placeholder="Enter Your User Name">
+        Email-id : <input type="email" ng-model="emailvalue" placeholder="Enter Your Email-id">
+        Password : <input type="password" ng-model="passwordvalue" placeholder="Enter Your password">
+        Location : <input type="text" ng-model="locationvalue" placeholder="Enter Your Location">
+        <button ng-click="displayname()">Click To Display</button><br> -->
+      <!-- <p>Full Name : {{fname}} </p>
+        <p>Last Name : {{lname}} </p> -->
+
+
+        
+      <!-- <h2> {{uname}} </h2>
+
+        <h2> {{name}} </h2>
+        <h2 ng-click="printhello()">click</h2>
+
+        <ul>Array Elements: <br>
+            <li ng-repeat="item in arr"> {{item.num}} </li>
+        </ul>
+
+        <p ng-hide="namecheck"> {{name}} </p>
+        
+        <h3> {{content}} </h3>
+        <img src= {{imageurl}}>
+
+        <h2 ng-class="{h:isred}">Hello</h2> -->
     </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script>
-        var arr = [10,30,20,60,40,70,50];
-        console.log(arr.sort(function(a,b){return a-b}));
+      var app = angular.module("demo", []);
+      app.controller("directive", [
+        "$scope",
+        function (s) { 
+          // 1.
+          // s.clrchg = function(){
+          //     s.iscolor = true
+          // }
 
-        var array = [
-            {"number":3,"value":"test"},
-            {"number":1,"value":"test"},
-            {"number":2,"value":"test"}
-        ];
+          // 2.
+          // s.islogin = true
+          // s.issignup = true
+          // s.toggle = () => {
+          //     if(s.islogin){
+          //         s.islogin = false
+          //         s.issignup = true
+          //     }
+          //     else{
+          //         s.islogin = true
+          //         s.issignup = false
+          //     }
+          // }
 
-        var b = JSON.parse('{"number" : 5,"value" : "Mugunth"},{"number":3,"value":"test"},{"number":1,"value":"test"},{"number":2,"value":"test"}')
-        console.log(b);
-        // var array = [
-        //     {id:3, name:'Muugnth'},
-        //     {id:2, name:'Karthik'},
-        //     {id:1, name:'Gowsick'}
-        // ];
-        // console.log(array.sort((a, b)=>{if(a.number<b.number){return -1;}}));
-        console.log(array.sort((a,b)=>{return a.number-b.number}));
+          // 3.
+          // s.name =[
+          //     {name: 'jani', country: 'Norway'},
+          //     {name: 'Mugunth', country: 'India'},
+          //     {name: 'John', country: 'Sweden'},
+          //     {name: 'Joe', country: 'England'},
+          //     {name: 'David', country: 'Denmark'},
+          //     {name: 'Marry', country: 'Denmark'},
+          //     {name: 'Joseph', country: 'Sweden'},
+          //     {name: 'Carl', country: 'Norway'},
+          // ];
 
+          // 4.
+          // s.displayname = () => {
+          //     s.user = {
+
+          //     };
+          //     s.user.uname = s.usernamevalue;
+          //     s.user.email = s.emailvalue;
+          //     s.user.pass = s.passwordvalue;
+          //     s.user.location = s.locationvalue;
+
+          //     // console.log();
+          //     console.log(s.user);
+          // }
+
+          
+          // s.uname = "Muugndaan K "
+          // s.name='Mugundaan';
+          // s.printhello = function(){
+          //     s.arr = [{num:1},{num:2},{num:3}];
+          //     console.log('array is populated');
+          //     s.namecheck=false;
+          //     s.content = 'This is a picture'
+          //     s.name = "Mugunth"
+          //     s.isred = true
+          //     s.imageurl = "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+          //     console.log('hello');
+          // }
+        },
+      ]);
+      // var arr = [10,30,20,60,40,70,50];
+      // console.log(arr.sort(function(a,b){return a-b}));
+
+      // var array = [
+      //     {"number":3,"value":"test"},
+      //     {"number":1,"value":"test"},
+      //     {"number":2,"value":"test"}
+      // ];
+
+      // var b = JSON.parse('{"number" : 5,"value" : "Mugunth"},{"number":3,"value":"test"},{"number":1,"value":"test"},{"number":2,"value":"test"}')
+      // console.log(b);
+      // // var array = [
+      // //     {id:3, name:'Muugnth'},
+      // //     {id:2, name:'Karthik'},
+      // //     {id:1, name:'Gowsick'}
+      // // ];
+
+      // // console.log(array.sort((a, b)=>{if(a.number<b.number){return -1;}}));
+      // console.log(array.sort((a,b)=>{return a.number-b.number}));
     </script>
-</body>
+  </body>
 </html>

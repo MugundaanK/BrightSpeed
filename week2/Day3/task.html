@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="demo">
+    <div ng-controller="directive">
+        <div ng-show="flag" ng-controller="register">
+            <h1>Registration Page</h1><br>
+            Full Name : <input type="text" ng-model="fullnamevalue" placeholder="Enter Your Full Name">
+            Email-id : <input type="email" ng-model="emailvalue" placeholder="Enter Your Email-id">
+            Password : <input type="password" ng-model="passwordvalue" placeholder="Enter Your password">
+            Location : <input type="text" ng-model="locationvalue" placeholder="Enter Your Location"><br><br>
+            <button ng-click="register()">Register</button><br><br>
+        </div>
+
+        <div ng-hide="flag" ng-controller="login">
+            <h1>Sign in Page</h1><br>
+            Email-id : <input type="email" ng-model="loginemail" placeholder="Enter Your Email-id">
+            Password : <input type="password" ng-model="loginpassword" placeholder="Enter Your password"><br><br>
+            <button ng-click="loginCheck()">Login</button><br><br>
+        </div>
+        <button  ng-click="toggle()">Toggle</button>
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module("demo", []);
+            // 5.
+            var userarr = [];
+            app.controller("register", ["$scope",function (s) {
+                s.register = () => {
+                    s.user = {};
+                    s.user.name = s.fullnamevalue;
+                    s.user.email = s.emailvalue;
+                    s.user.pass = s.passwordvalue;
+                    s.user.location = s.locationvalue;
+                    console.log(s.user);
+                    userarr.push(s.user);
+                    console.log(userarr);
+                };
+            }]);
+
+            
+            app.controller("login", ["$scope",function (s) {
+                s.loginCheck = () => {
+                    s.email = s.loginemail;
+                    s.pass = s.loginpassword;
+                    var state = true;
+                    console.log(s.email+" "+s.pass);
+                    for(let i of userarr){
+                        if(s.email == i.email && s.pass == i.pass){
+                            console.log('Login Successful');
+                            state = false;
+                        }
+                    }
+                    if(state){
+                        console.log('Login Unsuccessful');
+                    }
+                };
+            }]);
+
+            app.controller("directive", ["$scope",function (s) {
+                s.flag = true;
+                s.toggle = ()=>{
+                    if(s.flag){
+                        s.flag = false;
+                    }
+                    else{
+                        s.flag = true;
+                    }
+                };
+            }]);
+    </script>
+</body>
+</html>

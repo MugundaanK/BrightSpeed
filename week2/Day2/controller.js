@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var app = angular.module('demo',[])
 app.controller('UserController',function($scope){
     // $scope.name = 'Mugunth';
@@ -20,7 +19,8 @@ app.controller('UserController',function($scope){
     $scope.div = () =>{
         return a/b;
     }
-=======
+})
+
 var app = angular.module('demo',[])
 app.controller('UserController',function($scope){
     // $scope.name = 'Mugunth';
@@ -42,5 +42,4 @@ app.controller('UserController',function($scope){
     $scope.div = () =>{
         return a/b;
     }
->>>>>>> 4ad8b5bf3a6ed871301cd5fe6a0368b7c04328f0
 });

@@ -55,4 +55,26 @@ app.controller('control',['$scope',function(s){
     s.city = 'Salem'
 }])
 
+app.controller('directive',function($scope){
+    var arr = [10,30,20,60,40,70,50];
+      console.log(arr.sort(function(a,b){return a-b}));
+
+      var array = [
+          {"number":3,"value":"test"},
+          {"number":1,"value":"test"},
+          {"number":2,"value":"test"}
+      ];
+
+      var b = JSON.parse('{"number" : 5,"value" : "Mugunth"},{"number":3,"value":"test"},{"number":1,"value":"test"},{"number":2,"value":"test"}')
+      console.log(b);
+      var array = [
+          {id:3, name:'Muugnth'},
+          {id:2, name:'Karthik'},
+          {id:1, name:'Gowsick'}
+      ];
+
+      console.log(array.sort((a, b)=>{if(a.number<b.number){return -1;}}));
+      console.log(array.sort((a,b)=>{return a.number-b.number}));
+})
+
 

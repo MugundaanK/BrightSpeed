@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services in Angular JS</title>
+</head>
+<body ng-app="demo">
+    
+        <div ng-controller="postcontroller">
+
+            Fullname : <input type="text" placeholder="Enter your fullname" ng-model="fullname"><br>
+            Email-id : <input type="email" placeholder="Enter your Email-id" ng-model="emailid"><br>
+            password : <input type="password" placeholder="Enter your Password" ng-model="password"><br><br>
+
+            <button ng-click="sendData()">Submit</button>
+        </div>
+
+        <div ng-controller="getcontroller">
+            <button ng-click="getData()">Display User Details</button>
+            <p ng-repeat="index in detailarr">
+                Name : {{index.name}} <br>
+                Email : {{index.email}} <br>
+                Password : {{index.password}}
+            </p>
+        </div>
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>var app = angular.module('demo',[])</script>
+    <script src="getcontroller.js"></script>
+    <script src="postcontroller.js"></script>
+    <script src="userservices.js"></script>
+
+    
+</body>
+</html>

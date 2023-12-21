@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting in Angular JS</title>
+</head>
+<body ng-app="demo">
+
+    <div ng-controller="sortingandfilter">
+
+            Enter a Category : <input type="text" ng-model="category">
+
+            <button ng-click="sortcontent(prod_price)">sort</button><br><br>
+<!-- >
+                <th ng-click="search('name')">Name</th>
+                <th ng-click="search('country')">Country</th>
+            </tr>
+                <tr ng-repeat="i in userarr | orderBy : searchby">
+                    <td> {{i.name}} </td>
+                    <td> {{i.country}} </td>
+                </tr> -->
+
+            <table border="3px" cellpadding="5px" cellspacing="5px" width="30%">
+
+                <tr><th ng-click="sort('prod_id')">Id</th>
+                    <th ng-click="sort('prod_name')">Produt Name</th>
+                    <th ng-click="sort('prod_price')">Product Price</th>
+                    <th ng-click="sort('prod_category')">Product Category</th></tr>
+
+                <tr ng-repeat="index in product | orderBy: sortvalue">
+                    <td> {{index.prod_id}} </td><td> {{index.prod_name}} </td> 
+                    <td> {{index.prod_price}} </td><td> {{index.prod_category}} </td>
+                </tr>
+            </table>
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module('demo',[]);
+        app.controller('sortingandfilter', function($scope){
+            $scope.sortvalue = false;
+            $scope.product = [{prod_id:1, prod_name:'pixel 7', prod_price:'76000', prod_category:'smartphone'},
+                            {prod_id:2, prod_name:'allensolly shirt', prod_price:'1990', prod_category:'mens clothing'},
+                            {prod_id:3, prod_name:'puma shoe', prod_price:'1900', prod_category:'shoes'},
+                            {prod_id:4, prod_name:'allensolly shirt', prod_price:'2500', prod_category:'mens clothing'},
+                            {prod_id:5, prod_name:'nike shoe', prod_price:'3600', prod_category:'shoes'},
+                            {prod_id:6, prod_name:'nike shoe', prod_price:'2890', prod_category:'shoes'},
+                            {prod_id:7, prod_name:'Gold chain', prod_price:'3200', prod_category:'jwellary'},
+                            {prod_id:8, prod_name:'silver bracelet', prod_price:'2500', prod_category:'jwellery'},
+                            {prod_id:9, prod_name:'fastrack', prod_price:'4100', prod_category:'watch'},
+                            {prod_id:10, prod_name:'sonata', prod_price:'2400', prod_category:'watch'},
+                            {prod_id:11, prod_name:'clarkcable shirt', prod_price:'2500', prod_category:'mens clothing'},
+                            {prod_id:12, prod_name:'Micropave', prod_price:'3000', prod_category:'jwellery'},
+                            {prod_id:13, prod_name:'iphone 15', prod_price:'68000', prod_category:'smartphone'},
+                            {prod_id:14, prod_name:'samsung s23', prod_price:'78000', prod_category:'smartphone'},
+                            {prod_id:15, prod_name:'iphone 14', prod_price:'58000', prod_category:'smartphone'},
+                            {prod_id:16, prod_name:'titan', prod_price:'3800', prod_category:'watch'}];
+            console.log($scope.product);
+            console.log($scope.product.prod_price);
+
+            $scope.sort = (condition) => {
+                $scope.sortvalue = condition;
+            }
+
+        });
+    </script>
+</body>
+</html>

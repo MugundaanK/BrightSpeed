@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Angular JS</title>
+</head>
+<body ng-app="demo">
+    <div ng-controller="servicecontrol">
+        <ul>
+        <li ng-repeat="item in arr"> {{item}} </li>
+        </ul>
+        <button ng-click="getData()">Get Data</button>
+        <button ng-click="sendData(100)"> Send Data</button>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="servicecontrol.js"></script>
+    <script src="demoservices.js"></script>
+</body>
+</html>

@@ -3,26 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Sigup</title>
+    <style>
+        .registerdiv{
+            margin: auto;
+            width: 50%;
+            padding: 15px;
+            font-size: larger;
+            font-weight: 500;
+            background-color:rgb(70, 132, 70);
+            color: whitesmoke;
+            border-radius: 10px;
+            text-align: center;
+            
+        }
+        .logindiv{
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            font-size: larger;
+            font-weight: 550;
+            text-align: center;
+            background-color: cadetblue;
+            border-radius: 10px;
+            color: whitesmoke;
+        }
+        #registerbtn,#loginbtn,#toggle{
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body ng-app="demo">
     <div ng-controller="directive">
-        <div ng-show="flag" ng-controller="register">
+        
+        <div ng-show="flag" ng-controller="register" class="registerdiv">
             <h1>Registration Page</h1><br>
-            Full Name : <input type="text" ng-model="fullnamevalue" placeholder="Enter Your Full Name">
-            Email-id : <input type="email" ng-model="emailvalue" placeholder="Enter Your Email-id">
-            Password : <input type="password" ng-model="passwordvalue" placeholder="Enter Your password">
-            Location : <input type="text" ng-model="locationvalue" placeholder="Enter Your Location"><br><br>
-            <button ng-click="register()">Register</button><br><br>
+            Full Name : <input type="text" ng-model="fullnamevalue" placeholder="Enter Your Full Name"><br><br>
+            Email-id : <input type="email" ng-model="emailvalue" placeholder="Enter Your Email-id"><br><br>
+            Password : <input type="password" ng-model="passwordvalue" placeholder="Enter Your password"><br><br>
+            Location :
+            <select ng-model = "locationvalue">
+                <option value="Salem">SALEM</option>
+                <option value="Coimbatore">COIMBATORE</option>
+                <option value="Chennai">CHENNAI</option>
+                <option value="Bangalore">BANGALORE</option>
+            </select><br><br>
+            <button ng-click="register()" id="registerbtn">Register</button><br><br>
+            <button id="toggle"  ng-click="toggle()">Toggle</button>
         </div>
 
-        <div ng-hide="flag" ng-controller="login">
+        <div ng-hide="flag" ng-controller="login" class="logindiv">
             <h1>Sign in Page</h1><br>
-            Email-id : <input type="email" ng-model="loginemail" placeholder="Enter Your Email-id">
+            Email-id : <input type="email" ng-model="loginemail" placeholder="Enter Your Email-id"><br><br>
             Password : <input type="password" ng-model="loginpassword" placeholder="Enter Your password"><br><br>
-            <button ng-click="loginCheck()">Login</button><br><br>
+            <button ng-click="loginCheck()" id="loginbtn">Login</button><br><br>
+            <button id="toggle"  ng-click="toggle()">Toggle</button>
         </div>
-        <button  ng-click="toggle()">Toggle</button>
+        
     </div>
 
 

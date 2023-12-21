@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+
+  <button ng-click="changeOrder('name')">Sort by Name</button>
+  <button ng-click="changeOrder('age')">Sort by Age</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in people | orderBy:order">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('myController', function($scope) {
+        $scope.people = [
+          { name: 'John', age: 30 },
+          { name: 'Alice', age: 25 },
+          { name: 'Bob', age: 35 }
+        ];
+
+        $scope.order = 'name'; // default sorting order
+
+        $scope.changeOrder = function(propertyName) {
+          $scope.order = propertyName;
+        };
+      });
+  </script>
+
+</body>
+</html>

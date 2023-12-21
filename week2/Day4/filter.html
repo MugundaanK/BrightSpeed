@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter in Angular JS</title>
+</head>
+<body ng-app="demo">
+    
+    Uppercase, LowerCase, orderBy , filter, currency
+    
+    
+    <div ng-controller="filters">
+        <h2> {{msg | uppercase}} </h2>
+        <h2> {{msg | lowercase}} </h2>
+        <h2>Date : {{today | date}} </h2>
+        <li ng-repeat="index in prodarr | filter:{proname:'u'}">{{index.proprice}} {{index.proname}}</li>
+
+        <h3>Price : {{ p | currency}} </h3>
+        
+    </div>
+
+
+    <!-- 
+    filter: Input filter
+        
+    <div ng-controller="search">
+        Enter a letter : <input type="text" ng-model="letter">
+        <li ng-repeat="name in namearr | filter: letter"> {{name}} </li>
+    </div> -->
+    
+    filter: table filter according to the user click
+
+    <div ng-controller="tablefilter">
+        <table border="3px" cellpadding="5px" cellspacing="5px" width="20%">
+            <tr>
+                <th ng-click="search('name')">Name</th>
+                <th ng-click="search('country')">Country</th>
+            </tr>
+                <tr ng-repeat="i in userarr | orderBy : searchby">
+                    <td> {{i.name}} </td>
+                    <td> {{i.country}} </td>
+                </tr>
+        </table>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module('demo',[]);
+
+
+        // 1. uppercase, lowercase, currency, orderBy 
+        
+        app.controller('filters',function($scope){
+            $scope.msg = "hi mugundaan !";
+            $scope.p = 30;
+            $scope.today = new Date();
+            $scope.prodarr = [
+                            {id:1, proprice : 60000, proname : 'iphone 15'},
+                            {id:2, proprice : 87000, proname : 'iphone 15 plus'},
+                            {id:3, proprice : 69000, proname : 'oneplus 12'},
+                            {id:4, proprice : 65000, proname : 'samsung galaxy s23'},
+                            {id:5, proprice : 75000, proname : 'pixel 7 pro'}];
+        });
+        
+        // 2. Input filter
+        // app.controller('search',function($scope){
+        //     $scope.namearr = ['Mugunth','Gowsick','Jani','Carl','Joe','Mary','Anu','Praveen','Nitin'];
+        // });
+
+        app.controller('tablefilter',function($scope){
+            $scope.userarr=[
+                {name:'Mugunth',country:'India'},
+                {name:'John',country:'Sweden'},
+                {name:'Joe',country:'England'},
+                {name:'David',country:'Denmark'},
+                {name:'Jani',country:'England'},
+                {name:'Carl',country:'London'},
+                {name:'Mary',country:'Italy'},
+                {name:'Joseph',country:'Berlyn'},
+                {name:'Anu',country:'China'},
+                {name:'Praveen',country:'Britan'},];
+            $scope.search = function(condition){
+                $scope.searchby = condition;
+            };
+        });
+
+    </script>
+</body>
+</html>
